@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<title>iCamp</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+.pic{width:1000px;height: 720px;position: relative;overflow: hidden;}
+.pic_img{width: 400%;height: 720px;position:absolute;left:0;animation: run 5s infinite linear;font-size:0;}
+.pic_img img{display: block;width:1000px;height:720px;float:left;}
+@keyframes run{0%{left: 0%;} 20%{left: 0%;} 33%{left: -100%;} 53%{left: -100%;} 66%{left: -200%;} 88%{left: -200%;} 100%{left: -300%;}}
+.hotcard:hover{transform:scale(1.05);cursor:pointer;transition:all 0.2s ease-in-out}
+</style>
+</head>
+
+
+<body class="w3-content" style="max-width:1200px" bgcolor="white">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-collapse w3-top" style="z-index:3;width:240px;margin-left:-120px;" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <h1 class="w3-wide"><b>iCamp</b></h1>
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-white" style="font-weight:bold">
+    <a href="#home" class="w3-bar-item w3-button">Start Your Adventure</a>
+    <a onclick="myAccFunc()" href="javascript:void(0);" class="w3-button w3-left-align" id="myBtn">Hot Selling Series <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#living" class="w3-bar-item w3-button">Campsite Living</a>
+      <a href="#cooking" class="w3-bar-item w3-button">Camp Cooking</a>
+      <a href="#clothing" class="w3-bar-item w3-button">Clothing & Apparel</a>
+    </div>
+    <a href="#aboutus" class="w3-bar-item w3-button">About Us</a>
+    <a href="#subscribe" class="w3-bar-item w3-button">Subscribe</a>
+    <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-23 w3-wide">iCamp</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-22 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:200px;margin-right:-40px;">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:80px"></div>
+  
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge" id="home">
+    <h1 class="w3-left">Start Your Adventure</h1>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart"></i>
+      <i href="javascript:void(0)" class="fa fa-search w3-button" onclick="document.getElementById('search').style.display='block'"></i>    
+    </p>
+  </header>
+
+  <!-- Image header -->
+   <div class="w3-display-container w3-container">
+    <div class="pic">
+      <div class="pic_img">
+        <img src="https://images.pexels.com/photos/8659561/pexels-photo-8659561.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.jpg" alt="Products">
+        <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/f8155dd0-5764-4799-9752-8f297e62b5a2.__CR207,0,2587,1600_PT0_SX970_V1___.png"  alt="Products">
+        <img src="https://img.activityjapan.com/wi/4021290_m-min.jpg" alt="Products">
+        <img src="https://images.pexels.com/photos/8659561/pexels-photo-8659561.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2.jpg" alt="Products">
+      </div>
+      <div class="w3-display-topleft" style="padding:60px 48px;">
+        <h1 class="w3-jumbo w3-hide-small w3-text-white">Best Sellers</h1>
+        <h1 class="w3-hide-large w3-hide-medium w3-text-white">Best Sellers</h1>
+        <h1 class="w3-hide-smal w3-text-white">COLLECTION 2024</h1>
+        <p><a href="#products" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
+      </div>
+    </div>
+  </div> 
+
+  <!-- Product grid -->
+  <div class="w3-container w3-padding-32" id="products">
+    <!--hotselling-->
+    <div class="w3-row" id="hotselling">
+      <h1>Hot Selling Series</h1><br>
+      <div class="w3-col l3 s6" style="width:33.3%;">
+        <div class="hotbox w3-container">
+          <div class="hotcard w3-display-container">
+            <img src="image/livingclick.webp" style="border-radius:15px;width:100%;height:380px;box-shadow:0 2px 2px 0 darkgray, 0 6px 6px 0 grey;">
+            <div class="w3-display-topleft" style="padding:25px 30px;">
+              <h3 class="w3-hide-small w3-text-white">Bring the comforts of home to the outdoors</h3>
+            </div>
+            <div class="w3-display-middle w3-display-hover">
+              <p><a href="#living" class="w3-button w3-black">Check Here</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l3 s6" style="width:33.3%">
+        <div class="hotbox w3-container">
+          <div class="hotcard w3-display-container">
+            <img src="image/cooking.webp" style="border-radius:15px;width:100%;height:380px;box-shadow:0 2px 2px 0 darkgray, 0 6px 6px 0 grey;">
+            <div class="w3-display-topleft" style="padding:25px 30px;">
+              <h3 class="w3-hide-small w3-text-white">Create cookware & dining essentials for delicious meals</h3>
+            </div>
+            <div class="w3-display-middle w3-display-hover">
+              <p><a href="#cooking" class="w3-button w3-black">Check Here</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l3 s6" style="width:33.3%">
+        <div class="hotbox w3-container">
+          <div class="hotcard w3-display-container">
+            <img src="image/clothing.webp" style="border-radius:15px;width:100%;height:380px;box-shadow:0 2px 2px 0 darkgray, 0 6px 6px 0 grey;">
+            <div class="w3-display-topleft" style="padding:25px 30px;">
+              <h3 class="w3-hide-small w3-text-white">Seamlessly transition between city and nature</h3>
+            </div>
+            <div class="w3-display-middle w3-display-hover">
+                <p><a href="#clothing" class="w3-button w3-black">Check Here</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br>
+
+    <!--Campsite Living-->
+    <div class="w3-row" id="living">
+      <h2>Campsite Living</h2><br>
+      <div class="w3-col l3 s6">
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Alpha Breeze.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Alpha Breeze<br><b>$499.95</b></p>
+        </div>
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Sleeping Bag & Mat Plus.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+            <p>Sleeping Bag & Mat Plus<br><b>$269.95</b></p>
+        </div>
+      </div>
+      <div class="w3-col l3 s6">
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Land Lock Ivory.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+            <span class="w3-tag w3-display-topleft">New</span>
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Land Lock Ivory<br><b>$1599.95</b></p>
+        </div>
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Camping Mat Sheet.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Camping Mat Sheet<br><b>$86.95</b></p>
+        </div>
+      </div>
+      <div class="w3-col l3 s6">
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Living Lodge M Inner Mat.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+              </div>
+          </div>
+          <p>Living Lodge M Inner Mat<br><b>$377.95</b></p>
+        </div>
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Home & Camp Lantern.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+            <span class="w3-tag w3-display-topleft">Sale</span>
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Home & Camp Lantern<br><b>$169.95</b></p>
+        </div>
+      </div>
+      <div class="w3-col l3 s6"> 
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Stretch Pillow.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+              <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+              </div>
+          </div>
+          <p>Stretch Pillow<br><b>$54.95</b></p>
+        </div>
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Steel Head Peg Hammer.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+              <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+              </div>
+          </div>
+          <p>Steel Head Peg Hammer<br><b>$54.95</b></p><br>
+        </div>
+      </div>
+    </div>
+
+    <!--Camp Cooking-->
+    <div class="w3-row" id="cooking">
+      <h2>Camp Cooking</h2><br>
+      <div class="w3-col l3 s6">
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Grill Burner.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+            <span class="w3-tag w3-display-topleft">Hot</span>
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Grill Burner<br><b>$296.95</b></p>
+        </div>
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Fire Tool Set Pro..webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+            <p>Fire Tool Set Pro.<br><b>$118.95</b></p>
+        </div>
+      </div>
+      <div class="w3-col l3 s6">
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Teppanyaki Burner.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Teppanyaki Burner<br><b>$269.95</b></p>
+        </div>
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Entry IGT.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Entry IGT<br><b>$237.95</b></p>
+        </div>
+      </div>
+      <div class="w3-col l3 s6">
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Tramezzino.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+              </div>
+          </div>
+          <p>Tramezzino<br><b>$107.95</b></p>
+        </div>
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Folding Ladle.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+            <span class="w3-tag w3-display-topleft">Hot</span>
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Folding Ladle<br><b>$16.95</b></p>
+        </div>
+      </div>
+      <div class="w3-col l3 s6"> 
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Kettle No.1.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+              <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+              </div>
+          </div>
+          <p>Kettle No.1<br><b>$26.95</b></p>
+        </div>
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="image/Titanium Dining Set.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+              <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+              </div>
+          </div>
+          <p>Titanium Dining Set<br><b>$53.95</b></p><br>
+        </div>
+      </div>
+    </div>
+
+    <!--Clothing & Apparel-->
+      <div class="w3-row" id="clothing">
+        <h2>Clothing & Apparel</h2><br>
+        <div class="w3-col l3 s6">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="image/Takibi Light Denim Utility Shirt.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Light Denim Utility Shirt<br><b>$299.95</b></p>
+          </div>
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="image/Recycled Cotton Pullover Hoodie.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+              <p>Cotton Pullover Hoodie<br><b>$144.95</b></p>
+          </div>
+        </div>
+        <div class="w3-col l3 s6">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="image/3 Layer Graphene Bib Pants.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+              <span class="w3-tag w3-display-topleft">New</span>
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Graphene Bib Pants<br><b>$699.95</b></p>
+          </div>
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="image/Graphene Puffer Jacket.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Graphene Puffer Jacket<br><b>$619.95</b></p>
+          </div>
+        </div>
+
+        <div class="w3-col l3 s6">
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="image/Organic Cotton Poplin Stand-Collar Shirt.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+                <div class="w3-display-middle w3-display-hover">
+                  <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+                </div>
+            </div>
+            <p>Organic Cotton Poplin Shirt<br><b>$174.95</b></p>
+          </div>
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="image/Light Field Backpack.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Light Field Backpack<br><b>$149.95</b></p>
+          </div>
+        </div>
+        <div class="w3-col l3 s6"> 
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="image/Recycled Cotton Heavy Dress.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Cotton Heavy Dress<br><b>$109.95</b></p>
+          </div>
+          <div class="w3-container">
+            <div class="w3-display-container">
+              <img src="image/TDS Niobium Concept 3.webp" style="border-radius:15px;width:100%;box-shadow:0 2px 2px 0 darkgray, 0 6px 20px 0 grey;">
+              <span class="w3-tag w3-display-topleft">New</span>
+              <div class="w3-display-middle w3-display-hover">
+                <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+              </div>
+            </div>
+            <p>Niobium Concept 3<br><b>$300.00</b></p>
+          </div>
+        </div>
+      </div>
+  
+  <!--end of Product grid-->
+  </div>
+
+  <!-- About Us section -->
+    <div class="w3-padding-32" id="aboutus" style="margin-right:30px">
+      <h1>About Us</h1>
+      <p>iCamp is a high-end, fashion-forward camping brand that shares the joy and challenges of outdoor life with customers. We provide professional products and services to meet the demands of customers seeking quality and style.</p>
+      <div class="w3-row-padding w3-center" style="margin-top:60px">
+        <div class="w3-quarter">
+          <i class="fa fa-heart w3-margin-bottom w3-jumbo w3-center"></i>
+          <p class="w3-large"><b>Slogan</b></p>
+          <p>"Embark on Your Adventure into the Splendor of Outdoor Living." At iCamp, we believe in delving into the splendor of outdoor living to its fullest. Let's set forth on a journey to uncover the marvels of outdoor life together!</p>
+        </div>
+        <div class="w3-quarter">
+          <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+          <p class="w3-large"><b>Mission</b></p>
+          <p>Our goal is to inspire more individuals to venture into the arms of nature, embracing the magnificence of outdoor living. We strive to ignite a deeper passion for life, foster the pursuit of aspirations, and cultivate harmony with nature.</p>
+        </div>
+        <div class="w3-quarter">
+          <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+          <p class="w3-large"><b>Promise</b></p>
+          <p>Our dedication lies in providing top-notch camping gear and unforgettable experiences for adventurers of all ages. We strive to empower individuals to embrace true freedom and discover boundless joy outdoors.</p>
+        </div>
+        <div class="w3-quarter">
+          <i class="fa fa-desktop w3-margin-bottom w3-jumbo"></i>
+          <p class="w3-large"><b>Core Values</b></p>
+          <p>Our unwavering commitment to quality means meticulously selecting the finest camping gear for your safety and comfort. With round-the-clock customer service, we ensure a delightful shopping experience.</p>
+        </div>
+    </div>
+
+  <!-- Subscribe section -->
+  <div class="w3-padding-32" id="subscribe">
+    <h1>Subscribe</h1>
+    <p>To get special offers and VIP treatment:</p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
+    <button type="button" class="w3-button w3-black w3-margin-bottom">Subscribe</button>
+  </div>
+  
+  <!-- Footer -->
+  <div class="w3-padding-32" id="subscribe">
+    <h1>Contact</h1>
+    <footer class="w3-padding w3-small w3-center" id="footer">
+      <div class="w3-row-padding">
+        <div class="w3-col s4">
+          <h4>Message</h4>
+          <p>Any questions? Go ahead.</p>
+          <form action="/action_page.php" target="_blank">
+            <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Telephone" name="Telephone" required></p>
+            <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required></p>
+            <button type="submit" class="w3-button w3-block w3-black">Send</button>
+          </form>
+        </div>
+        <div class="w3-col s4">
+          <h4>About</h4>
+          <p><a href="#aboutus">About us</a></p>
+          <p><a href="#footer">We're hiring</a></p>
+          <p><a href="#footer">Support</a></p>
+          <p><a href="#footer">Find store</a></p>
+          <p><a href="#footer">Shipment</a></p>
+          <p><a href="#footer">Payment</a></p>
+          <p><a href="#footer">Gift card</a></p>
+          <p><a href="#home">Return</a></p>
+          <p><a href="#footer">Help</a></p>
+        </div>
+        <div class="w3-col s4 w3-justify">
+          <h4>Store</h4>
+          <p><i class="fa fa-fw fa-map-marker"></i> 224 Waterloo Road, Kowloon Tong, Hong Kong</p>
+          <p><i class="fa fa-fw fa-phone"></i> 85294909754</p>
+          <p><i class="fa fa-fw fa-envelope"></i> 23456124@life.hkbu.edu.hk</p>
+          <h4>We accept</h4>
+          <p><i class="fa fa-fw fa-cc-amex"></i> Amex</p>
+          <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+          <p><i class="fa fa-fw fa-wechat"></i> WeChat Pay</p>
+          <br>
+          <i class="fa fa-facebook-official w3-hover-opacity w3-xlarge"></i>
+          <i class="fa fa-instagram w3-hover-opacity w3-xlarge"></i>
+          <i class="fa fa-snapchat w3-hover-opacity w3-xlarge"></i>
+          <i class="fa fa-pinterest-p w3-hover-opacity w3-xlarge"></i>
+          <i class="fa fa-twitter w3-hover-opacity w3-xlarge"></i>
+          <i class="fa fa-linkedin w3-hover-opacity w3-xlarge"></i>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <br>
+  <div class="w3-center">Powered by <u>ZHANG CAIMIN</u>.</div>
+  <!-- End page content -->
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">Newsletter</h2>
+      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-black w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<!-- Search -->
+<div id="search" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:64px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('search').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">Search What You Want</h2>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter items"></p>
+      <button type="button" class="w3-button w3-padding-large w3-black w3-margin-bottom" onclick="document.getElementById('search').style.display='none'">Send</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Accordion 
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Click on the "Products" link on page load to open the accordion for demo purposes
+document.getElementById("myBtn").click();
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+</body>
+</html>
+
+
